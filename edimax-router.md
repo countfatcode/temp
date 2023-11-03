@@ -8,15 +8,15 @@ you can download BR-6428nS V3 firmware from [here](https://www.edimax.com/edimax
 
 The ```mp``` function in ```/bin/webs``` can receive the command parameter and execute it using ```system``` function.
 
-![vuln](D:\个人学习\漏洞挖掘\screenshot\3.jpg)
+![vuln](https://github.com/countfatcode/temp/blob/main/3.jpg)
 
 Before using the system function to execute the command, ```strchr``` will replace the ';' in the command parameter with '\0', but we can use '|' to easily bypass the check.Below is a screenshot of the exploit.
 
-![vuln1](D:\个人学习\漏洞挖掘\screenshot\2.jpg)
+![vuln1](https://github.com/countfatcode/temp/blob/main/2.jpg)
 
 PS You must pass basic verification before you can exploit this vulnerability.The default user/passwd is admin/1234.
 
-![vuln2](D:\个人学习\漏洞挖掘\screenshot\4.png)
+![vuln2](https://github.com/countfatcode/temp/blob/main/4.png)
 
 ## POC
 
