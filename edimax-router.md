@@ -8,7 +8,7 @@ you can download BR-6428nS V3 firmware from [here](https://www.edimax.com/edimax
 
 The ```mp``` function in ```/bin/webs``` can receive the command parameter and execute it using ```system``` function.
 
-![vuln](./3.jpg)
+![vuln](https://github.com/countfatcode/temp/blob/main/3.jpg)
 
 Before using the system function to execute the command, ```strchr``` will replace the ';' in the command parameter with '\0', but we can use '|' to easily bypass the check.Below is a screenshot of the exploit.
 
