@@ -2,7 +2,7 @@
 
 you can download BR-6428nS V3 firmware from [here](https://www.edimax.com/edimax/download/download/data/edimax/global/download/wireless_routers_n300/br-6428ns_v3)
 
-![firmware download](.\1.png)
+![firmware download](https://github.com/countfatcode/temp/blob/main/1.png)
 
 ## analyze
 
