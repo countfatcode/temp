@@ -6,11 +6,11 @@ You can download BR-6478AC V2 from [here](https://www.edimax.com/edimax/download
 
 The ```stainfo``` function in ```/bin/webs``` can receive the command parameter and execute it using ```system```function.
 
-![fig1](.\image\4.png)
+![fig1](https://github.com/countfatcode/temp/blob/main/stainfo/image/4.png)
 
 Using ```FirmAE``` to simulate firmware, capture packets with ```BurpSuite```, and  modify the ```interface``` parameter, successfully create the file  ```vuln.txt``` in the root directory.
 
-![](.\image\5.png)
+![](https://github.com/countfatcode/temp/blob/main/stainfo/image/5.png)
 
 ## POC
 
