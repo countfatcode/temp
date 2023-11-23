@@ -10,7 +10,7 @@ A stack overflow vulnerability exists in the ```formUSBAccount``` function in ``
 
 All four ```strcpy``` functions in `formUSBAccount` are vulnerable to stack overflow.
 
-<center class="half"><img src="[.\screenshot\3.png](https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/3.png)" width="500" /><img src="https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/4.png" width="500" /></center>
+<center class="half"><img src="https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/3.png" width="500" /><img src="https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/4.png" width="500" /></center>
 
 ## POC
 
