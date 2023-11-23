@@ -51,7 +51,7 @@ Execute arbitrary code through stack overflow. The following is the exploitation
 3. Adjusting the stack pointer.
 4. Executing shellcode.
 
-![](https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/1.png)
+![](https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/6.png)
 
 Note: Most routers have ASLR disabled, so we can obtain the ```libc_base``` through debugging. Shellcode reverse connect to 192.168.2.2:31337, please replace it with your ip address. Refer to https://shell-storm.org/shellcode/files/shellcode-860.html for shellcode generation.
 
