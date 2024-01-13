@@ -210,4 +210,4 @@ print(f"r.status_code ======> {r.status_code}")
 
 Getshell.
 
-![](.\screenshot\7.png)
+![](https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/7.png)
