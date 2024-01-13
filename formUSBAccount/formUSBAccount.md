@@ -4,7 +4,7 @@ Download from [here](https://www.edimax.com/edimax/download/download/data/edimax
 
 ## Name of Affected Products
 
-edimax
+Edimax BR6478AC V2
 
 ## Affected Version
 
