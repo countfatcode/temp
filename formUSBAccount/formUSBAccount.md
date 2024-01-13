@@ -2,25 +2,41 @@
 
 Download from [here](https://www.edimax.com/edimax/download/download/data/edimax/global/download/wireless_routers_ac1200/br-6478ac_v2)
 
+## Name of Affected Products
+
+edimax
+
+## Affected Version
+
+v1.23
+
+## Problem  Type
+
+ Buffer overflow
+
+## Description
+
+ In Edimax BR6478AC V2 v1.23, the /bin/webs binary contains a stack-based buffer overflow. It is possible to overwrite other values located on the stack due to an incorrect use of the strcpy() function.
+
 ## Analyze
 
 A stack overflow vulnerability exists in the ```formUSBAccount``` function in ```/bin/webs```. We can overwrite the rest of the data in the stack by setting the parameters ```addFolder``` non-empty and ```UserName``` longer than 64 characters. 
 
-![](https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/1.png)
+![](.\screenshot\1.png)
 
 All four ```strcpy``` functions in `formUSBAccount` are vulnerable to stack overflow.
 
-<center class="half"><img src="https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/3.png" width="500" /><img src="https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/4.png" width="500" /></center>
+<center class="half"><img src=".\screenshot\3.png" width="500" /><img src=".\screenshot\4.png" width="500" /></center>
 
 ## POC
 
 Using ```FirmAE``` to emulate the firmware and Burpsuite to modify the parameters ```editFolder=1``` and ```UserName```=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBB. We successfully overwrite other data in the stack.
 
-![](https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/2.png)
+![](.\screenshot\2.png)
 
 When the function restores the value of the ```$ra``` register at the end, it retrieves data from the stack, and we can control the value of ```$ra```.
 
-![](https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/5.png)
+![](.\screenshot\5.png)
 
 BurpSuite packet.
 
@@ -51,7 +67,7 @@ Execute arbitrary code through stack overflow. The following is the exploitation
 3. Adjusting the stack pointer.
 4. Executing shellcode.
 
-![](https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/6.png)
+![](.\screenshot\6.png)
 
 Note: Most routers have ASLR disabled, so we can obtain the ```libc_base``` through debugging. Shellcode reverse connect to 192.168.2.2:31337, please replace it with your ip address. Refer to https://shell-storm.org/shellcode/files/shellcode-860.html for shellcode generation.
 
@@ -194,4 +210,4 @@ print(f"r.status_code ======> {r.status_code}")
 
 Getshell.
 
-![](https://github.com/countfatcode/temp/blob/main/formUSBAccount/screenshot/7.png)
+![](.\screenshot\7.png)

